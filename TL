@@ -1,1 +1,17 @@
-
+%将“TimeLine.fig”拖曳进入Matlab的命令行窗口即可观看时间轴图像，为了高保真并没有选择存储为jpg
+A=1:1:186;%当前excel中整理了186行内容，作为横轴——还没有整理完，现在只做到隋初
+B=[];
+for i=1:186;
+    B(i)=8;
+end
+barh(A,B,0.001);%画图画细一点
+for i=1:186;
+    text(1,i,hindu(i),'fontsize',2);%字体小一点；将excel中“印度和中亚”三列命名为hindu
+    text(2,i,hindu2(i),'fontsize',2);%hindu2
+    text(3,i,hindu3(i),'fontsize',2);%hindu3
+    text(4,i,SiriLanka(i),'fontsize',2);%斯里兰卡，狮子国，赤铜鍱洲,命名为“SiriLanka”
+    text(5,i,china(i),'fontsize',2);%汉地，震旦，大秦，命名为“china”
+    text(6,i,china2(i),'fontsize',2);%“china2”
+end%标字
+set(gca,'YTick',A);%设置具体时间值
+set(gca,'YTickLabel',time,'fontsize',2);
